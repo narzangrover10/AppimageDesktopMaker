@@ -1,1 +1,1 @@
-download the sdcript nad run tiun teh trerminal;
+its super ez just download the script and run it in the terminal with "bash setup.sh"
