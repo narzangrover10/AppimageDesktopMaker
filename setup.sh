@@ -30,6 +30,7 @@ while true; do
             sleep 0.5
             break
         done
+        break
     else
         echo "Invalid input. Please enter \"y\", \"n\", \"p\""
         sleep 0.5
