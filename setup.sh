@@ -17,7 +17,7 @@ while true; do
         if [ "$user_path" == /* ] || [ "$user_path" == ./* ] || [ "$user_path" == ../* ]; then
             mkdir "${user_path}"
             appimages="$user_path"
-        elif
+        else
             mkdir "~/${user_path}"
             appimages="~/${user_path}"
         fi
