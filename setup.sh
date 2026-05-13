@@ -5,7 +5,7 @@ sleep 0.5
 
 while true; do
 
-    read -p "Enter \"y\" to continue, or enter \"n\" to enter a new directory name: " folder_consent
+    read -p "Enter \"y\" to continue, or enter \"n\" change name or path: " folder_consent
     if [ $folder_consent = "y" ]; then
         mkdir ~/Appimages/
         appimages="~/Appimages/"
@@ -13,9 +13,14 @@ while true; do
         sleep 0.5
         break
     elif [ $folder_consent = "n" ]; then
-        read -p "Enter your desired folder name:" user_path
-        mkdir ~/"${user_path}"
-        appimages="~/$userpath"
+        read -p "Enter your desired folder name or path:" user_path
+        if [ "$user_path" == /* ] || [ "$user_path" == ./* ] || [ "$user_path" == ../* ]; then
+            mkdir "${user_path}"
+            appimages="$user_path"
+        elif
+            mkdir "~/${user_path}"
+            appimages="~/${user_path}"
+        fi
         echo "$userpath folder successfully created!"
         sleep 0.5
         break
