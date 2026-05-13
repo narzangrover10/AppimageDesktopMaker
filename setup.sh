@@ -54,6 +54,8 @@ Type=Application
 EOL
 cat "$drop_here"
 
+chmod +x "$drop_here"
+
 sleep 0.5
 
 echo "\"Drop Here.desktop\" successfully created in $appimages"

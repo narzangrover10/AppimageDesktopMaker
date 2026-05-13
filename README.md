@@ -8,6 +8,8 @@
 > Either run this command in the same folder as the script, or run `bash /path/to/script/setup.sh` 
 
 4. Read the output and answer any given prompts
+### Post-setup
+The script creates a .desktop file in your Appimage directory. To use it, drag any .appimage file on top of it, and it will create the launchable .desktop file for it in `~/.local/share/applications`. You can go to this path and launch it from there, or you can launch it from the applications menu
 
 ## To-do
 1. Automate extraction of icon from Appimage
