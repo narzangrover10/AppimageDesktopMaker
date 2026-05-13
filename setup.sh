@@ -5,31 +5,33 @@ sleep 0.5
 
 while true; do
 
-    read -p "Enter \"y\" to continue, or enter \"n\" change name or path: " folder_consent
+    read -p "Enter \"y\" to continue, \"n\" to change the folder name, or \"p\" to change path: " folder_consent
     if [ $folder_consent = "y" ]; then
         mkdir ~/Appimages/
         appimages="~/Appimages/"
         echo "Appimages folder successfully created!"
         sleep 0.5
         break
-    elif [ $folder_consent = "n" ]; then
-        read -p "Enter your desired folder name or absolute path:" user_path
-        if case "$user_path" in
-            /*) pathchk -- "$user_path";;
-            *) ! :;;
-        esac
-        then
-            mkdir "${user_path}"
-            appimages="$user_path"
-        else
-            mkdir "~/${user_path}"
-            appimages="~/${user_path}"
-        fi
-        echo "$userpath folder successfully created!"
-        sleep 0.5
-        break
+    elif [ $folder_consent = "p" ]; then
+        while true; do
+            read -p "Enter your desired folder name or absolute path:" user_path
+            if case "$user_path" in
+                /*) pathchk -- "$user_path";;
+                *) ! :;;
+            esac
+            then
+                mkdir "${user_path}"
+                appimages="$user_path"
+                break
+            else
+                echo "Invalid Path. Please enter an absolute path (starting with /)"
+            fi
+            echo "$userpath folder successfully created!"
+            sleep 0.5
+            break
+        done
     else
-        echo "Invalid input. Please enter \"y\" or \"n\""
+        echo "Invalid input. Please enter \"y\", \"n\", \"p\""
         sleep 0.5
     fi
 done
