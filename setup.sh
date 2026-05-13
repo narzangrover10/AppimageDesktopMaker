@@ -14,7 +14,7 @@ while true; do
         break
     elif [ $folder_consent = "p" ]; then
         while true; do
-            read -p "Enter your desired folder name or absolute path:" user_path
+            read -p "Enter your desired absolute path: " user_path
             if case "$user_path" in
                 /*) pathchk -- "$user_path";;
                 *) ! :;;
@@ -29,6 +29,11 @@ while true; do
         done
         echo "$userpath folder successfully created!"
         sleep 0.5
+        break
+    elif [ $folder_consent = "n" ]; then
+        read -p "Enter your desired folder name: " user_path
+        mkdir "~/${user_path}"
+        appimages="~/${user_path}"
         break
     else
         echo "Invalid input. Please enter \"y\", \"n\", \"p\""
