@@ -1,4 +1,6 @@
-# Usage
+# Read-me
+
+## Usage
 
 1. Download **setup.sh** from [Releases](https://github.com/narzangrover10/AppimageDesktopMaker/releases)  
 2. Open your terminal of choice, and run the script with a command such as `bash setup.sh` 
