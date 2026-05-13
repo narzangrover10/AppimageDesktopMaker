@@ -8,7 +8,7 @@ while true; do
     read -p "Enter \"y\" to continue, \"n\" to change the folder name, or \"p\" to change path: " folder_consent
     if [ $folder_consent = "y" ]; then
         mkdir ~/Appimages/
-        appimages=~/Appimages/
+        appimages=~/Appimages
         echo "Appimages folder successfully created!"
         sleep 0.5
         break
