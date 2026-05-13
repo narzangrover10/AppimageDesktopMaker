@@ -1,6 +1,6 @@
 #! /bin/bash
 
-echo "Making \"Appimages\" folder in ~ directory. This is where the script will be and where you should put any subsequent .appimage files"
+echo "Making \"Appimages\" folder in home/<username>/ directory. This is where the script will be and where you should put any .appimage files"
 sleep 0.5
 
 while true; do
