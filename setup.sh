@@ -13,8 +13,12 @@ while true; do
         sleep 0.5
         break
     elif [ $folder_consent = "n" ]; then
-        read -p "Enter your desired folder name or path:" user_path
-        if [ "$user_path" == /* ] || [ "$user_path" == ./* ] || [ "$user_path" == ../* ]; then
+        read -p "Enter your desired folder name or absolute path:" user_path
+        if case "$user_path" in
+            /*) pathchk -- "$user_path";;
+            *) ! :;;
+        esac
+        then
             mkdir "${user_path}"
             appimages="$user_path"
         else
