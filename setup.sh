@@ -26,10 +26,10 @@ while true; do
             else
                 echo "Invalid Path. Please enter an absolute path (starting with /)"
             fi
-            echo "$userpath folder successfully created!"
-            sleep 0.5
             break
         done
+        echo "$userpath folder successfully created!"
+        sleep 0.5
         break
     else
         echo "Invalid input. Please enter \"y\", \"n\", \"p\""
