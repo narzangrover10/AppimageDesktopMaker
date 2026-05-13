@@ -32,8 +32,8 @@ while true; do
         break
     elif [ $folder_consent = "n" ]; then
         read -p "Enter your desired folder name: " user_path
-        mkdir "~/${user_path}"
-        appimages="~/${user_path}"
+        mkdir ~/"$user_path"
+        appimages=~/"$user_path"
         break
     else
         echo "Invalid input. Please enter \"y\", \"n\", \"p\""
